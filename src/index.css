@@ -7,44 +7,44 @@
 
 @layer base {
   :root {
-    --background: 256 33% 97%;
-    --foreground: 256 33% 15%;
+    --background: 240 33% 97%;
+    --foreground: 240 33% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 256 33% 15%;
+    --card-foreground: 240 33% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 256 33% 15%;
+    --popover-foreground: 240 33% 15%;
 
-    --primary: 256 70% 75%;
-    --primary-foreground: 256 30% 15%;
+    --primary: 260 70% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 65% 55%;
-    --secondary-foreground: 256 30% 15%;
+    --secondary: 180 65% 55%;
+    --secondary-foreground: 240 30% 15%;
 
-    --muted: 256 10% 90%;
-    --muted-foreground: 256 10% 50%;
+    --muted: 260 10% 90%;
+    --muted-foreground: 260 10% 50%;
 
-    --accent: 355 100% 70%;
+    --accent: 325 80% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 256 20% 85%;
-    --input: 256 20% 85%;
-    --ring: 256 70% 75%;
+    --border: 260 20% 85%;
+    --input: 260 20% 85%;
+    --ring: 260 70% 65%;
 
     --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 240 20% 12%;
+    --sidebar-foreground: 240 10% 90%;
+    --sidebar-primary: 260 70% 65%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 240 20% 20%;
+    --sidebar-accent-foreground: 240 10% 90%;
+    --sidebar-border: 240 20% 30%;
+    --sidebar-ring: 260 70% 65%;
   }
 
   * {
@@ -61,7 +61,7 @@
   }
 
   .gradient-heading {
-    @apply font-bold bg-gradient-to-r from-journal-purple to-journal-teal bg-clip-text text-transparent;
+    @apply font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 
   .tag {
@@ -69,11 +69,11 @@
   }
 
   .tag-emotion {
-    @apply bg-opacity-15 bg-journal-purple text-journal-purple;
+    @apply bg-opacity-15 bg-primary text-primary;
   }
 
   .tag-context {
-    @apply bg-opacity-15 bg-journal-teal text-journal-teal;
+    @apply bg-opacity-15 bg-secondary text-secondary;
   }
 
   .energy-low {
@@ -89,11 +89,11 @@
   }
 
   .nav-link {
-    @apply py-2 px-4 rounded-lg transition-all hover:bg-journal-purple hover:bg-opacity-10 hover:text-journal-purple;
+    @apply py-2 px-4 rounded-lg transition-all hover:bg-primary hover:bg-opacity-10 hover:text-primary;
   }
 
   .nav-link.active {
-    @apply bg-journal-purple bg-opacity-10 text-journal-purple font-medium;
+    @apply bg-primary bg-opacity-10 text-primary font-medium;
   }
 
   .insight-bubble {
@@ -101,7 +101,7 @@
   }
 
   .insight-bubble.ai {
-    @apply bg-journal-purple bg-opacity-10 rounded-tl-sm ml-auto;
+    @apply bg-primary bg-opacity-10 rounded-tl-sm ml-auto;
   }
 
   .insight-bubble.user {

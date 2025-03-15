@@ -54,11 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				journal: {
-					purple: '#9b87f5',
-					teal: '#4ECDC4',
-					coral: '#FF6B6B',
-					cream: '#FFF9EC',
-					midnight: '#2E294E',
+					purple: '#8B5CF6', // Updated to a more vibrant purple
+					teal: '#38B2AC',   // Updated to a more vibrant teal
+					coral: '#F56565',  // Updated to a more vibrant coral
+					cream: '#FFF9EC', 
+					midnight: '#1A1F2C', // Darker, more space-like
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
