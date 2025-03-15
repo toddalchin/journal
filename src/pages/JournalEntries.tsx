@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import JournalCard, { JournalEntry } from '@/components/JournalCard';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
-import { Search, Calendar, SlidersHorizontal } from 'lucide-react';
+import { Search, Calendar, SlidersHorizontal, PlusCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Sample data
@@ -12,7 +12,7 @@ const sampleEntries: JournalEntry[] = [
   {
     id: '1',
     title: 'Finding clarity in chaos',
-    content: 'Today I realized that much of my anxiety comes from trying to control things that are fundamentally outside my control. When I focus on what I can actually influence, I feel much more centered and effective.',
+    content: "Today I realized that much of my anxiety comes from trying to control things that are fundamentally outside my control. When I focus on what I can actually influence, I feel much more centered and effective.",
     date: new Date('2023-06-15T14:32:00'),
     emotions: ['Calm', 'Grateful', 'Reflective'],
     contexts: ['Life', 'Epiphanies'],
@@ -21,7 +21,7 @@ const sampleEntries: JournalEntry[] = [
   {
     id: '2',
     title: 'Breakthrough at work',
-    content: 'The project I've been stuck on for weeks finally clicked today. Sometimes stepping away and giving your brain space to process is the most productive thing you can do.',
+    content: "The project I've been stuck on for weeks finally clicked today. Sometimes stepping away and giving your brain space to process is the most productive thing you can do.",
     date: new Date('2023-06-12T09:15:00'),
     emotions: ['Excited', 'Proud', 'Energized'],
     contexts: ['Work', 'AI'],
@@ -30,7 +30,7 @@ const sampleEntries: JournalEntry[] = [
   {
     id: '3',
     title: 'Morning meditation insights',
-    content: 'During meditation this morning, I had a powerful realization about how I've been approaching relationships. I've been seeking validation instead of connection. This shift in perspective feels significant.',
+    content: "During meditation this morning, I had a powerful realization about how I've been approaching relationships. I've been seeking validation instead of connection. This shift in perspective feels significant.",
     date: new Date('2023-06-10T07:45:00'),
     emotions: ['Peaceful', 'Curious', 'Hopeful'],
     contexts: ['Life', 'Relationships', 'Epiphanies'],
