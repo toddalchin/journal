@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JournalCard, { JournalEntry } from '@/components/JournalCard';
