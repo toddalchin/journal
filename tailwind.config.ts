@@ -54,11 +54,14 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				journal: {
-					purple: '#8B5CF6', // Updated to a more vibrant purple
-					teal: '#38B2AC',   // Updated to a more vibrant teal
-					coral: '#F56565',  // Updated to a more vibrant coral
+					purple: '#9b87f5', // Brighter purple
+					teal: '#50DEFF',   // Bright LCARS blue
+					coral: '#FF5C5C',  // Brighter coral
 					cream: '#FFF9EC', 
 					midnight: '#1A1F2C', // Darker, more space-like
+					command: '#CC99CC', // Command division color
+					science: '#99CCFF', // Science division color
+					operations: '#FFCC99', // Operations division color
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

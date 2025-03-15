@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import JournalCard, { JournalEntry } from '@/components/JournalCard';
@@ -42,7 +43,7 @@ const JournalEntries = () => {
   const [entries, setEntries] = useState<JournalEntry[]>(sampleEntries);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('newest');
-  const [filterTag, setFilterTag] = useState('');
+  const [filterTag, setFilterTag] = useState('all');
   
   // Get all unique tags from entries
   const allTags = Array.from(
@@ -71,7 +72,7 @@ const JournalEntries = () => {
       }
       
       // Tag filter
-      if (filterTag) {
+      if (filterTag && filterTag !== 'all') {
         const [type, value] = filterTag.split(':');
         if (type === 'emotion' && !entry.emotions.includes(value)) {
           return false;
@@ -101,23 +102,23 @@ const JournalEntries = () => {
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2 gradient-heading">Your Journal</h1>
-          <p className="text-gray-600">Reflect on your journey and growth over time</p>
+          <p className="text-muted-foreground">Reflect on your journey and growth over time</p>
         </div>
         
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
             <Input
               placeholder="Search entries..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
+              className="pl-10 bg-muted/30 border-muted"
             />
           </div>
           
           <div className="flex gap-2">
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-[140px]">
+              <SelectTrigger className="w-[140px] bg-muted/30 border-muted">
                 <Calendar size={16} className="mr-2" />
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
@@ -130,12 +131,12 @@ const JournalEntries = () => {
             </Select>
             
             <Select value={filterTag} onValueChange={setFilterTag}>
-              <SelectTrigger className="w-[160px]">
+              <SelectTrigger className="w-[160px] bg-muted/30 border-muted">
                 <SlidersHorizontal size={16} className="mr-2" />
                 <SelectValue placeholder="Filter by tag" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All entries</SelectItem>
+                <SelectItem value="all">All entries</SelectItem>
                 {allTags.map(tag => {
                   const [type, value] = tag.split(':');
                   return (
@@ -155,11 +156,11 @@ const JournalEntries = () => {
               <JournalCard key={entry.id} entry={entry} />
             ))
           ) : (
-            <div className="p-8 text-center bg-white rounded-lg shadow-sm">
-              <p className="text-gray-500 mb-4">No journal entries found</p>
+            <div className="p-8 text-center lcars-panel">
+              <p className="text-muted-foreground mb-4">No journal entries found</p>
               <Button 
                 onClick={() => navigate('/new')}
-                className="bg-journal-purple hover:bg-journal-purple/90"
+                className="bg-accent hover:bg-accent/80"
               >
                 Create your first entry
               </Button>
@@ -171,7 +172,7 @@ const JournalEntries = () => {
           <Button 
             onClick={() => navigate('/new')}
             size="lg"
-            className="rounded-full h-14 w-14 bg-journal-purple hover:bg-journal-purple/90 shadow-lg"
+            className="rounded-full h-14 w-14 bg-accent hover:bg-accent/80 shadow-lg"
           >
             <PlusCircle size={24} />
           </Button>

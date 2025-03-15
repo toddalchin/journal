@@ -1,29 +1,14 @@
 
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpenText, Brain, PenLine } from 'lucide-react';
+import { BookOpenText, Brain, PenLine, Star, Rocket } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="fixed top-0 left-0 h-full w-20 bg-sidebar shadow-md z-10 flex flex-col items-center py-8">
-      <div className="mb-8 text-primary">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-10 h-10"
-        >
-          <path d="M12 2L2 7l10 5l10-5l-10-5z" />
-          <path d="M2 17l10 5l10-5" />
-          <path d="M2 12l10 5l10-5" />
-        </svg>
+      <div className="mb-8 text-accent">
+        <Star className="w-8 h-8" />
+        <Rocket className="w-6 h-6 mt-1" />
       </div>
 
       <div className="flex flex-col items-center space-y-8">
@@ -37,9 +22,10 @@ const Navigation = () => {
                     isActive ? 'active' : ''
                   }`
                 }
+                end
               >
                 <BookOpenText size={24} />
-                <span className="text-xs mt-1">Entries</span>
+                <span className="text-xs mt-1">Journal</span>
               </NavLink>
             </TooltipTrigger>
             <TooltipContent side="right">
@@ -77,7 +63,7 @@ const Navigation = () => {
                 }
               >
                 <PenLine size={24} />
-                <span className="text-xs mt-1">Create</span>
+                <span className="text-xs mt-1">New Entry</span>
               </NavLink>
             </TooltipTrigger>
             <TooltipContent side="right">

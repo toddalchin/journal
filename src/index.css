@@ -7,43 +7,43 @@
 
 @layer base {
   :root {
-    --background: 240 33% 97%;
-    --foreground: 240 33% 15%;
+    --background: 240 20% 12%;
+    --foreground: 240 10% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 33% 15%;
+    --card: 240 20% 15%;
+    --card-foreground: 240 10% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 33% 15%;
+    --popover: 240 20% 15%;
+    --popover-foreground: 240 10% 95%;
 
     --primary: 260 70% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 180 65% 55%;
     --secondary-foreground: 240 30% 15%;
 
-    --muted: 260 10% 90%;
-    --muted-foreground: 260 10% 50%;
+    --muted: 240 20% 20%;
+    --muted-foreground: 240 10% 65%;
 
-    --accent: 325 80% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 80% 60%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 260 20% 85%;
-    --input: 260 20% 85%;
+    --border: 240 20% 25%;
+    --input: 240 20% 25%;
     --ring: 260 70% 65%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 240 20% 12%;
+    --sidebar-background: 240 20% 8%;
     --sidebar-foreground: 240 10% 90%;
     --sidebar-primary: 260 70% 65%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 20% 20%;
+    --sidebar-accent: 240 20% 15%;
     --sidebar-accent-foreground: 240 10% 90%;
-    --sidebar-border: 240 20% 30%;
+    --sidebar-border: 240 20% 25%;
     --sidebar-ring: 260 70% 65%;
   }
 
@@ -57,11 +57,11 @@
   }
 
   .journal-card {
-    @apply bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-muted;
+    @apply bg-card rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-muted;
   }
 
   .gradient-heading {
-    @apply font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 
   .tag {
@@ -69,23 +69,23 @@
   }
 
   .tag-emotion {
-    @apply bg-opacity-15 bg-primary text-primary;
+    @apply bg-primary bg-opacity-15 text-primary;
   }
 
   .tag-context {
-    @apply bg-opacity-15 bg-secondary text-secondary;
+    @apply bg-secondary bg-opacity-15 text-secondary;
   }
 
   .energy-low {
-    @apply bg-blue-100 text-blue-700;
+    @apply bg-blue-500 bg-opacity-20 text-blue-400;
   }
 
   .energy-medium {
-    @apply bg-yellow-100 text-yellow-700;
+    @apply bg-yellow-500 bg-opacity-20 text-yellow-300;
   }
 
   .energy-high {
-    @apply bg-red-100 text-red-700;
+    @apply bg-red-500 bg-opacity-20 text-red-400;
   }
 
   .nav-link {
@@ -101,10 +101,23 @@
   }
 
   .insight-bubble.ai {
-    @apply bg-primary bg-opacity-10 rounded-tl-sm ml-auto;
+    @apply bg-accent bg-opacity-20 rounded-tl-sm ml-auto;
   }
 
   .insight-bubble.user {
-    @apply bg-gray-100 rounded-tr-sm;
+    @apply bg-muted rounded-tr-sm;
+  }
+
+  /* Star Trek inspired styles */
+  .lcars-header {
+    @apply bg-gradient-to-r from-primary to-accent rounded-lg p-2;
+  }
+
+  .lcars-panel {
+    @apply bg-card border border-primary border-opacity-25 rounded-lg shadow-md;
+  }
+
+  .neo-blur {
+    @apply backdrop-blur-xl bg-background/50 border border-white/10;
   }
 }
