@@ -84,13 +84,13 @@ const NewEntry = () => {
       <div className="max-w-3xl mx-auto">
         <div className="mb-6">
           <h1 className="text-3xl font-bold mb-2 gradient-heading">New Journal Entry</h1>
-          <p className="text-gray-600">Capture your thoughts, feelings, and insights</p>
+          <p className="text-muted-foreground">Capture your thoughts, feelings, and insights</p>
         </div>
         
-        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+        <div className="bg-card rounded-xl shadow-md p-6 border border-border">
           <div className="space-y-6">
             <div>
-              <label htmlFor="title" className="block text-sm font-medium mb-1">
+              <label htmlFor="title" className="block text-sm font-medium mb-1 text-foreground">
                 Title
               </label>
               <Input
@@ -103,7 +103,7 @@ const NewEntry = () => {
             </div>
             
             <div>
-              <label htmlFor="content" className="block text-sm font-medium mb-1">
+              <label htmlFor="content" className="block text-sm font-medium mb-1 text-foreground">
                 Your Thoughts
               </label>
               <Textarea
@@ -140,7 +140,7 @@ const NewEntry = () => {
             <div className="pt-4">
               <Button 
                 onClick={handleSave}
-                className="w-full bg-journal-purple hover:bg-journal-purple/90"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 <Save size={18} className="mr-2" />
                 Save Journal Entry
