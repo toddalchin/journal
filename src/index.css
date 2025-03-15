@@ -65,35 +65,35 @@
   }
 
   .tag {
-    @apply rounded-full px-3 py-1 text-sm font-medium transition-all hover:scale-105;
+    @apply rounded-full px-3 py-1 text-sm font-medium transition-all hover:scale-105 border;
   }
 
   .tag-emotion {
-    @apply bg-primary bg-opacity-15 text-primary;
+    @apply bg-primary/20 text-primary border-primary/30;
   }
 
   .tag-context {
-    @apply bg-secondary bg-opacity-15 text-secondary;
+    @apply bg-secondary/20 text-secondary border-secondary/30;
   }
 
   .energy-low {
-    @apply bg-blue-500 bg-opacity-20 text-blue-400;
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
   }
 
   .energy-medium {
-    @apply bg-yellow-500 bg-opacity-20 text-yellow-300;
+    @apply bg-yellow-500/20 text-yellow-300 border border-yellow-500/30;
   }
 
   .energy-high {
-    @apply bg-red-500 bg-opacity-20 text-red-400;
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
   }
 
   .nav-link {
-    @apply py-2 px-4 rounded-lg transition-all hover:bg-primary hover:bg-opacity-10 hover:text-primary;
+    @apply py-2 px-4 rounded-lg transition-all hover:bg-primary/20 hover:text-primary;
   }
 
   .nav-link.active {
-    @apply bg-primary bg-opacity-10 text-primary font-medium;
+    @apply bg-primary/20 text-primary font-medium shadow-md;
   }
 
   .insight-bubble {
@@ -101,11 +101,11 @@
   }
 
   .insight-bubble.ai {
-    @apply bg-accent bg-opacity-20 rounded-tl-sm ml-auto;
+    @apply bg-accent/20 rounded-tl-sm ml-auto border border-accent/30;
   }
 
   .insight-bubble.user {
-    @apply bg-muted rounded-tr-sm;
+    @apply bg-muted rounded-tr-sm border border-muted/50;
   }
 
   /* Star Trek inspired styles */
@@ -114,7 +114,7 @@
   }
 
   .lcars-panel {
-    @apply bg-card border border-primary border-opacity-25 rounded-lg shadow-md;
+    @apply bg-card border border-primary/25 rounded-lg shadow-md;
   }
 
   .neo-blur {

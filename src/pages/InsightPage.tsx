@@ -90,10 +90,10 @@ const Insight = () => {
       <div className="max-w-4xl mx-auto w-full flex-1 flex flex-col">
         <div className="mb-6">
           <h1 className="text-3xl font-bold mb-2 gradient-heading">AI Insight</h1>
-          <p className="text-gray-600">Your personal coach, therapist, and guide for self-reflection</p>
+          <p className="text-muted-foreground">Your personal coach, therapist, and guide for self-reflection</p>
         </div>
         
-        <div className="flex-1 overflow-hidden flex flex-col bg-white rounded-xl shadow-sm border border-gray-100">
+        <div className="flex-1 overflow-hidden flex flex-col bg-card rounded-xl shadow-sm border border-muted">
           <div className="flex-1 overflow-y-auto p-4">
             <div className="space-y-4">
               {messages.map((msg) => (
@@ -102,15 +102,15 @@ const Insight = () => {
                   className={`insight-bubble ${msg.role === 'ai' ? 'ai' : 'user'}`}
                 >
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-2">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-2 bg-card">
                       {msg.role === 'ai' ? (
-                        <Sparkles className="text-journal-purple" size={18} />
+                        <Sparkles className="text-accent" size={18} />
                       ) : (
-                        <User className="text-gray-600" size={18} />
+                        <User className="text-muted-foreground" size={18} />
                       )}
                     </div>
                     <div className="flex-1">
-                      <p className={`text-sm ${msg.role === 'ai' ? 'text-journal-purple' : 'text-gray-700'}`}>
+                      <p className={`text-sm ${msg.role === 'ai' ? 'text-accent' : 'text-foreground'}`}>
                         {msg.content}
                       </p>
                     </div>
@@ -120,9 +120,9 @@ const Insight = () => {
               {isLoading && (
                 <div className="insight-bubble ai">
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-journal-purple rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-journal-purple rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="w-2 h-2 bg-journal-purple rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                   </div>
                 </div>
               )}
@@ -130,25 +130,25 @@ const Insight = () => {
             </div>
           </div>
           
-          <div className="p-4 border-t">
+          <div className="p-4 border-t border-muted">
             <div className="flex items-end space-x-2">
               <Textarea
                 placeholder="Ask for guidance, reflection, or share your thoughts..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="flex-1 min-h-[80px] max-h-[160px] resize-none"
+                className="flex-1 min-h-[80px] max-h-[160px] resize-none bg-muted/50 border-muted"
               />
               <Button
                 onClick={handleSendMessage}
                 disabled={isLoading || !input.trim()}
-                className="bg-journal-purple hover:bg-journal-purple/90 h-[40px] w-[40px] rounded-full p-0 flex items-center justify-center"
+                className="bg-accent hover:bg-accent/90 h-[40px] w-[40px] rounded-full p-0 flex items-center justify-center"
               >
                 <Send size={18} />
               </Button>
             </div>
             
-            <div className="mt-4 text-xs text-gray-500 flex items-center">
+            <div className="mt-4 text-xs text-muted-foreground flex items-center">
               <BookOpenText size={12} className="mr-1" />
               <span>Your conversations help me provide personalized insights over time</span>
             </div>

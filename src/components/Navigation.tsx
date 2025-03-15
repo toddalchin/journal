@@ -8,7 +8,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 h-full w-20 bg-sidebar shadow-md z-10 flex flex-col items-center py-8">
       <div className="mb-8 text-accent">
         <Star className="w-8 h-8" />
-        <Rocket className="w-6 h-6 mt-1" />
+        <Rocket className="w-6 h-6 mt-1 ml-1" />
       </div>
 
       <div className="flex flex-col items-center space-y-8">
@@ -25,7 +25,7 @@ const Navigation = () => {
                 end
               >
                 <BookOpenText size={24} />
-                <span className="text-xs mt-1">Journal</span>
+                <span className="text-xs mt-1">Entries</span>
               </NavLink>
             </TooltipTrigger>
             <TooltipContent side="right">
@@ -63,7 +63,7 @@ const Navigation = () => {
                 }
               >
                 <PenLine size={24} />
-                <span className="text-xs mt-1">New Entry</span>
+                <span className="text-xs mt-1">Create</span>
               </NavLink>
             </TooltipTrigger>
             <TooltipContent side="right">
