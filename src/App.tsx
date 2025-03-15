@@ -9,6 +9,7 @@ import JournalEntries from "./pages/JournalEntries";
 import Insight from "./pages/InsightPage";
 import NewEntry from "./pages/NewEntry";
 import NotFound from "./pages/NotFound";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<JournalEntries />} />
+          <Route path="/" element={<Index />} />
           <Route path="/insight" element={<Insight />} />
           <Route path="/new" element={<NewEntry />} />
           <Route path="*" element={<NotFound />} />
